@@ -1,0 +1,18 @@
+Brief Description : Verify compose button functionality to send an email with valid email id 	Component : Compose button
+	Prerequisite 1: User Should be logged in to valid Gmail account  
+	Prerequisite 2: Internet connection should be available   
+	Data Parameter : <To> , <Subject>
+	
+	Steps :
+	Action 1: Click on Compose button
+	Expected Result 1: System should opened Compose popup window with New Message as window name on right bottom side of Gmail account 
+	Action 2: Entered valid email id into To filed <To>='abc@gmail.com'
+	Expected Result 2: System should be able to entered valid email id 
+	Action 3: Click and entered Subject in Subject section/area
+	Expected Result 3: System should be able to enter Subject <Subject>='Incubyte'
+	Action 4: Click and entered text in email body 
+	Expected Result 4: System should be able to entered text in email body ex: QA test for Incubyte
+	Action 5: Click on Send button
+	Expected Result 5: System should change window name as Subject name and email got send to recipaint also it shows one message at left bottom side as "Message sent  Undo View message"
+	
+	Expected Output : System Should send an compose email successfully to valid recipaint.
