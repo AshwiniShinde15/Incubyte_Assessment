@@ -1,0 +1,57 @@
+Scenario 1:Verify compose button functionality to send an email with valid email id.
+
+Given : User is on Compose popup window 
+When  : User Click on Compose button 
+Then  : System should open New Message popup window at right bottom side of gmail account 
+And   : User enters email id "abc@gmail.com"
+And   : User enters Subject "Incubyte"
+And   : User enters email body "QA test for Incubyte"
+And   : User click on Send button
+Then  : System Should send an compose email successfully to valid recipaint.
+
+
+Scenario 2: Verify the maximum length possible for Subject and Body area.
+Given : User is on Compose popup window 
+AND   : User click on email body  
+When  : User enters maximum number of characters in email body area.
+Then  : System should show alret for maximum number characters for email body area
+AND   : User click on Subject area 
+When  : User enters maximum number of characters in Subject area.
+Then  : System should show alret for maximum number characters for email Subject area.
+ 
+
+Scenario 3: Verify that the emails composed but not sent remain in the draft section.
+Given : User is on Compose popup window 
+When  : User Click on Compose button 
+Then  : System should open New Message popup window at right bottom side of gmail account 
+And   : User enters email id "abc@gmail.com"
+And   : User enters Subject "Incubyte"
+And   : User enters email body "QA test for Incubyte"
+And   : User Stop entering/typing in compose body,Subject
+And   : User click on Drafts from left panel 
+Then  : Compose email should get saved in draft when user keep compose email as it is
+
+
+Scenario 4:Verify that the user can enter multiple comma-separated emailed in ‘To’, ‘cc’ and ‘bcc’ sections.
+
+
+
+
+Scenario 5:Verify that the Send an email by keeping all fields blanks
+Given : User is on Compose popup window 
+When  : User Click on Compose button 
+Then  : System should open New Message popup window at right bottom side of gmail account 
+And   : User enters email id "abc@gmail.com"
+And   : User enters Subject "Incubyte"
+And   : User enters email body "QA test for Incubyte"
+And   : User click on Send button
+Then  : System Should send an compose email successfully to valid recipaint.
+
+
+
+Scenario 6: Verify compose button functionality to send an email with valid email id with no internet access
+
+
+Scenario 7: Verify that the composing and sending an email by adding subject , email body but without adding email id/invalid email address
+
+
