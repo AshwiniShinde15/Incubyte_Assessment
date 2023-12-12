@@ -1,6 +1,7 @@
-Scenario 1:Verify compose button functionality to send an email with valid email id.
+Feature: compose function in Gmail
 
-Given : User is on Compose popup window 
+Scenario 1: Verify compose button functionality to send an email with valid email id.
+Given : User is on Compose popup window with Internet access
 When  : User Click on Compose button 
 Then  : System should open New Message popup window at right bottom side of gmail account 
 And   : User enters email id "abc@gmail.com"
@@ -11,8 +12,8 @@ Then  : System Should send an compose email successfully to valid recipaint.
 
 
 Scenario 2: Verify the maximum length possible for Subject and Body area.
-Given : User is on Compose popup window 
-AND   : User click on email body  
+Given : User is on Compose popup window with Internet access
+And   : User click on email body  
 When  : User enters maximum number of characters in email body area.
 Then  : System should show alret for maximum number characters for email body area
 AND   : User click on Subject area 
@@ -21,10 +22,8 @@ Then  : System should show alret for maximum number characters for email Subject
  
 
 Scenario 3: Verify that the emails composed but not sent remain in the draft section.
-Given : User is on Compose popup window 
-When  : User Click on Compose button 
-Then  : System should open New Message popup window at right bottom side of gmail account 
-And   : User enters email id "abc@gmail.com"
+Given : User is on Compose popup window with Internet access
+When  : User enters email id "abc@gmail.com"
 And   : User enters Subject "Incubyte"
 And   : User enters email body "QA test for Incubyte"
 And   : User Stop entering/typing in compose body,Subject
@@ -32,26 +31,43 @@ And   : User click on Drafts from left panel
 Then  : Compose email should get saved in draft when user keep compose email as it is
 
 
-Scenario 4:Verify that the user can enter multiple comma-separated emailed in ‘To’, ‘cc’ and ‘bcc’ sections.
-
-
-
-
-Scenario 5:Verify that the Send an email by keeping all fields blanks
-Given : User is on Compose popup window 
-When  : User Click on Compose button 
-Then  : System should open New Message popup window at right bottom side of gmail account 
-And   : User enters email id "abc@gmail.com"
+Scenario 4: Verify that the user can enter multiple comma-separated emailed in ‘To’, ‘Cc’ and ‘Bcc’ sections.
+Given : User is on Compose popup window with Internet access
+When  : User enters multiple email id into To filed "abc@gmail.com","Ashiwimarne.15@gmail.com","Test@gmail.com","Test2@outlook.com","Test3@yahoo.com" 
+And   : User enters multiple email id into Cc filed "Test4@gmail.com","Test8@outlook.com"
+And   : User enters multiple email id into Bcc filed "Test9@gmail.com","Test1@utlook.com"
 And   : User enters Subject "Incubyte"
 And   : User enters email body "QA test for Incubyte"
 And   : User click on Send button
 Then  : System Should send an compose email successfully to valid recipaint.
 
 
+Scenario 5: Verify that the Send an email by keeping all fields blanks 
+Given : User is on Compose popup window with Internet access
+When  : User enters email id "abc@gmail.com"
+And   : User enters Subject as blank
+And   : User enters email body as blank
+And   : User click on Send button
+Then  : System Should show error popup when try to Send an email by keeping all fields blanks
+
+
 
 Scenario 6: Verify compose button functionality to send an email with valid email id with no internet access
+Given : User is on Compose popup window with NO Internet access
+When  : User enters email id "abc@gmail.com"
+And   : User enters Subject "Incubyte"
+And   : User enters email body "QA test for Incubyte"
+And   : User click on Send button
+Then  : System should Saved compose email in drafts when user try to send email with no internet access
 
 
-Scenario 7: Verify that the composing and sending an email by adding subject , email body but without adding email id/invalid email address
+Scenario 7: Verify that the composing and sending an email by adding subject,email body without adding email id/invalid email address
+Given : User is on Compose popup window with Internet access
+When  : User enters email id "abcgmail.com" OR "aaaa" OR "122@"
+And   : User enters Subject "Incubyte"
+And   : User enters email body "QA test for Incubyte"
+And   : User click on Send button
+Then  : System should show error popup for invalid email address when user try to send email
+
 
 
